@@ -106,6 +106,5 @@ const allUsers = async (req, res, next) => {
 module.exports = {
   registerControllers,
   loginControllers,
-
   allUsers,
 };
