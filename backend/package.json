@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "server": "nodemon backend/server.js",
-    "build": "npm install --production"
-  },
+"build": "npm install --production && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"  },
   "keywords": [],
   "author": "",
   "license": "ISC",
