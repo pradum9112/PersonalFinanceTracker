@@ -1,4 +1,6 @@
-const host = "http://localhost:5000";
+// const host = "http://localhost:5000";
+const host = "https://finance-tracker-u8k5.onrender.com";
+
 export const registerAPI = `${host}/api/auth/register`;
 export const loginAPI = `${host}/api/auth/login`;
 export const addTransaction = `${host}/api/v1/addTransaction`;
