@@ -14,7 +14,8 @@ const app = express();
 
 const port = process.env.PORT;
 
-const allowedOrigins = ["http://localhost:3000"];
+// const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["https://finance-tracker-u8k5.onrender.com"];
 
 // Middleware
 app.use(express.json());
@@ -35,19 +36,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api/v1", transactionRoutes);
 app.use("/api/auth", userRoutes);
 
-// /////////----deployment----/////////
-// const __dirname1 = path.resolve();
-// if (process.env.NODE_ENV === "nod") {
-//   app.use(express.static(path.join(__dirname1, "../frontend/build")));
-//   app.get("*", (req, res) =>
-//     res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
-//   );
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("API is running..");
-//   });
-// }
-// /////////----deployment----/////////
+/////////----deployment----/////////
+const __dirname1 = path.resolve();
+if (process.env.NODE_ENV === "nod") {
+  app.use(express.static(path.join(__dirname1, "../frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+/////////----deployment----/////////
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
