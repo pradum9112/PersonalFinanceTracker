@@ -15,7 +15,7 @@ const app = express();
 const port = process.env.PORT;
 
 // const allowedOrigins = ["http://localhost:3000"];
-const allowedOrigins = ["https://finance-tracker-u8k5.onrender.com"];
+const allowedOrigins = ["https://finance-frontend-gu1a.onrender.com"];
 
 // Middleware
 app.use(express.json());
